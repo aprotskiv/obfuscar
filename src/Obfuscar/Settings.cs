@@ -79,6 +79,8 @@ namespace Obfuscar
             SkipGenerated = XmlConvert.ToBoolean(vars.GetValue("SkipGenerated", "false"));
             SkipSpecialName = XmlConvert.ToBoolean(vars.GetValue("SkipSpecialName", "false"));
             CustomChars = vars.GetValue("CustomChars", "");
+
+            SkipNativeResources = XmlConvert.ToBoolean(vars.GetValue("SkipNativeResources", "false"));
         }
 
         public bool RegenerateDebugInfo { get; }
@@ -124,5 +126,7 @@ namespace Obfuscar
         public bool SkipSpecialName { get; }
 
         public string CustomChars { get; }
+        
+        public bool SkipNativeResources { get; set; }
     }
 }
