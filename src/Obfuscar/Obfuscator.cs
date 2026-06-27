@@ -217,7 +217,8 @@ namespace Obfuscar
                         if (Project.Settings.SkipNativeResources)
                         {
                             LoggerService.Logger.LogDebug("Native resources will be skipped for assembly: {0}", info.Name);
-                            parameters.WriteNativeResources = false;
+                            parameters.WriteNativeResources = false; // Flag has not been included into original AssemblyTools repository.                            
+                            // Please checkout branch https://github.com/aprotskiv/AssemblyTools/tree/issue-1_Introduce_flag_to_disable_writing_Win32_resources
                         }
 
                         // Determine whether this assembly should be written in-place
