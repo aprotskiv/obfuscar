@@ -214,6 +214,12 @@ namespace Obfuscar
                             parameters.WriteSymbols = true;
                         }
 
+                        if (Project.Settings.SkipNativeResources)
+                        {
+                            LoggerService.Logger.LogDebug("Native resources will be skipped for assembly: {0}", info.Name);
+                            parameters.WriteNativeResources = false;
+                        }
+
                         // Determine whether this assembly should be written in-place
                         string originalPath = info.FileName;
                         string originalDir = Path.GetDirectoryName(originalPath) ?? string.Empty;
