@@ -26,6 +26,7 @@
 
 using System;
 using System.IO;
+using System.Linq;
 using System.Xml;
 
 namespace Obfuscar
@@ -81,6 +82,9 @@ namespace Obfuscar
             CustomChars = vars.GetValue("CustomChars", "");
 
             SkipNativeResources = XmlConvert.ToBoolean(vars.GetValue("SkipNativeResources", "false"));
+            
+            CustomAttributesToPreservePropertyNames = vars.GetValue("CustomAttributesToPreservePropertyNames", "")
+                .Split(';').Select(x => x.Trim()).Where(x => !string.IsNullOrEmpty(x)).ToArray();
         }
 
         public bool RegenerateDebugInfo { get; }
@@ -128,5 +132,7 @@ namespace Obfuscar
         public string CustomChars { get; }
         
         public bool SkipNativeResources { get; set; }
+        
+        public string[] CustomAttributesToPreservePropertyNames { get; set; }
     }
 }
