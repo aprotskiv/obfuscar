@@ -1,8 +1,4 @@
 <Solution>
-  <Configurations>
-    <BuildType Name="Debug" />
-    <BuildType Name="Release" />
-  </Configurations>
   <Folder Name="/.nuget/">
     <File Path=".nuget/NuGet.exe" />
   </Folder>
@@ -15,26 +11,12 @@
     <File Path=".editorconfig" />
     <File Path="test.bat" />
   </Folder>
-  <Project Path="src/Baml/Baml.csproj">
-    <BuildType Solution="Debug|*" Project="Debug" />
-    <BuildType Solution="Release|*" Project="Release" />
-  </Project>
-  <Project Path="src/Console/Obfuscar.Console.csproj">
-    <BuildType Solution="Debug|*" Project="Debug" />
-    <BuildType Solution="Release|*" Project="Release" />
-  </Project>
-  <Project Path="src/GlobalTools/GlobalTools.csproj">
-    <BuildType Solution="Debug|*" Project="Debug" />
-    <BuildType Solution="Release|*" Project="Release" />
-  </Project>
-  <Project Path="src/Obfuscar/Obfuscar.csproj">
-    <BuildType Solution="Debug|*" Project="Debug" />
-    <BuildType Solution="Release|*" Project="Release" />
-  </Project>
-  <Project Path="src/Tests/ObfuscarTests.csproj">
-    <BuildType Solution="Debug|*" Project="Debug" />
-    <BuildType Solution="Release|*" Project="Release" />
-  </Project>
+  <Project Path="../Obfuscar_AssemblyTools/src/LeXtudio.Metadata.Mutable/LeXtudio.Metadata.Mutable.csproj" />
+  <Project Path="src/Baml/Baml.csproj" />
+  <Project Path="src/Console/Obfuscar.Console.csproj" />
+  <Project Path="src/GlobalTools/GlobalTools.csproj" />
+  <Project Path="src/Obfuscar/Obfuscar.csproj" />
+  <Project Path="src/Tests/ObfuscarTests.csproj" />
   <Properties Name="MonoDevelopProperties">
     <Property Name="$0.CSharpFormattingPolicy" Value="$3" />
     <Property Name="$0.DotNetNamingPolicy" Value="$1" />
