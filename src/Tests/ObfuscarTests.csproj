@@ -3,11 +3,11 @@
   <PropertyGroup>
     <!-- detection SDK version -->
     <ParsedSdkVersion>$([System.Text.RegularExpressions.Regex]::Replace($(NETCoreSdkVersion), '-.*', ''))</ParsedSdkVersion>
-    <!-- <IsNet80Supported Condition="'$(ParsedSdkVersion)' &gt;= '8.0'">true</IsNet80Supported>
-    <IsNet90Supported Condition="'$(ParsedSdkVersion)' &gt;= '9.0'">true</IsNet90Supported> -->
+    <!-- <IsNet80Supported Condition="'$(ParsedSdkVersion)' &gt;= '8.0'">true</IsNet80Supported>-->
+    <IsNet90Supported Condition="'$(ParsedSdkVersion)' &gt;= '9.0'">true</IsNet90Supported> 
     <IsNet100Supported Condition="'$(ParsedSdkVersion)' &gt;= '10.0'">true</IsNet100Supported>
-    <!-- <TargetFrameworks Condition="'$(IsNet80Supported)' == 'true'">$(TargetFrameworks);net8.0</TargetFrameworks>
-    <TargetFrameworks Condition="'$(IsNet90Supported)' == 'true'">$(TargetFrameworks);net9.0</TargetFrameworks> -->
+    <!-- <TargetFrameworks Condition="'$(IsNet80Supported)' == 'true'">$(TargetFrameworks);net8.0</TargetFrameworks>-->
+    <TargetFrameworks Condition="'$(IsNet90Supported)' == 'true'">$(TargetFrameworks);net9.0</TargetFrameworks> 
     <TargetFrameworks Condition="'$(IsNet100Supported)' == 'true'">$(TargetFrameworks);net10.0</TargetFrameworks>
     <TargetFrameworks Condition="'$(OS)' == 'Windows'">$(TargetFrameworks);net472</TargetFrameworks>
     <AssemblyName>ObfuscarTests</AssemblyName>
@@ -33,11 +33,13 @@
     <Compile Include="GlobalUsings.Legacy.cs" Condition="'$(TargetFramework)' == 'net472'" />
     <Compile Include="GlobalUsings.Shared.cs" Condition="'$(TargetFramework)' != 'net472'" />
     <Compile Include="AssemblyHelper.cs" />
+    <Compile Include="AnonymousMethodTests.cs" />
     <Compile Include="AnonymousTypePropertyTests.cs" />
     <Compile Include="AttributeTests.cs" />
     <Compile Include="AutoSkipTypeTests.cs" />
     <Compile Include="BamlTests.cs" />
     <Compile Include="CleanPoolTests.cs" />
+    <Compile Include="CollectionExpressionTests.cs" />
     <Compile Include="CompilerGeneratedNestedTypeTests.cs" />
     <Compile Include="CustomAttributeTests.cs" />
     <Compile Include="CustomAttributeNamedArgumentTests.cs" />
@@ -59,6 +61,10 @@
     <Compile Include="GenericDictionaryWeakReferenceTests.cs" />
     <Compile Include="InitPropertyTests.cs" />
     <Compile Include="IncludeTests.cs" />
+    <Compile Include="InheritMapTests.cs" />
+    <Compile Include="TypeMatchTests.cs" />
+    <Compile Include="NameMakerTests.cs" />
+    <Compile Include="PredicateCollectionAndTesterTests.cs" />
     <Compile Include="InterfaceTests.cs" />
     <Compile Include="NetStandardTests.cs" />
     <Compile Include="NetCoreTests.cs" />
@@ -72,6 +78,7 @@
     <Compile Include="BaseTypeTests.cs" />
     <Compile Include="QueryablePropertyAccessorTests.cs" />
     <Compile Include="ResourcesTests.cs" />
+    <Compile Include="RulesAndAttributesTests.cs" />
     <Compile Include="SettingsTests.cs" />
     <Compile Include="SigningTests.cs" />
     <Compile Include="FieldOffsetTests.cs" />
@@ -96,6 +103,9 @@
     <Compile Include="ObfuscationAttributeTests.cs" />
     <Compile Include="ExceptionHandlerTests.cs" />
     <Compile Include="BamlResourceTests.cs" />
+    <Compile Include="MapWriterTests.cs" />
+    <Compile Include="EnumerableParameterIsSetToNullTests.cs" />
+    <Compile Include="DiagnosticTests.cs" />
     <Compile Include="EntryPointTests.cs" />
   </ItemGroup>
 
